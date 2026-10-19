@@ -55,4 +55,5 @@ jobs:
             git reset --hard origin/main
             docker compose up -d --build --remove-orphans
             docker image prune -f
-            curl --fail --silent --show-error http://127.0.0.1/ > /dev/null
+            docker compose ps --status running ai-orchestration-tools
+            curl --fail --silent --show-error --resolve tools.gestudio.my.id:443:127.0.0.1 https://tools.gestudio.my.id/ > /dev/null
